@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { lazy, Suspense } from "react"
 import Loader from "./Components/Loader"
+import Header from "./Components/Header"
 
 //implementing lazy loading in the app
 const HomePage = lazy(() => import("./Pages/HomePage"))
@@ -29,6 +30,7 @@ const TransactionManagement = lazy(
 const App = () => {
   return (
    <Router>
+    <Header />
     <Suspense fallback={<Loader />}>
     <Routes>
       <Route path="/" element={<HomePage />}/>

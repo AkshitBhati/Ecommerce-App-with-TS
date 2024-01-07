@@ -7,6 +7,10 @@ const user = {_id:"gfgf", role:"admin"}
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
 
+    const logoutHandler = () => {
+        setIsOpen(false)
+    }
+
   return (
     <nav className='header'>
         <Link to={"/"} onClick={() => setIsOpen(false)}>Home</Link>
@@ -25,7 +29,7 @@ const Header = () => {
                     )}
 
                     <Link to={"/orders"} onClick={() => setIsOpen(false)}>Orders</Link>
-                    <button>
+                    <button onClick={logoutHandler}>
                         <FaSignOutAlt />
                     </button>
                 </div>
